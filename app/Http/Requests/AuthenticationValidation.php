@@ -5,7 +5,6 @@ namespace App\Http\Requests;
 use App\Traits\ApiResponserTrait;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Http\Requests\ApiRequests;
-use App\Rules\AlphaDash;
 
 class AuthenticationValidation extends ApiRequests
 {
@@ -45,7 +44,7 @@ class AuthenticationValidation extends ApiRequests
      */
     public function response(array $errors)
     {
-        return $this->errorResponse($errors, 'Form Validation Error', 400);
+        return $this->errorResponse('Form Validation Error', 400);
     }
 
 }

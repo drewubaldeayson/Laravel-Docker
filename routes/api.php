@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
@@ -18,9 +17,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
 
-    //SPRIBE ENDPOINT
     //Authentication
     Route::post('auth', 'AuthenticationController@authenticateProvider');
 
+    //Fetch Player Information
+    Route::post('info', 'PlayerController@getPlayerInformation');
+
+    //Withdraw Balance
+    Route::post('withdraw', 'TransactionController@withdraw');
+
+    //Deposit Balance
+    Route::post('deposit', 'TransactionController@deposit');
+
+    //Rollback Transaction
+    Route::post('rollback', 'TransactionController@rollback');
+
+    //Player Notification Callback
+    Route::post('playerNotificationCallback', 'PlayerNotificationController@callbackPlayerNotification');
     
 });

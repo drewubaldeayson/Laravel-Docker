@@ -16,7 +16,7 @@ class AuthenticationService
         $username = $data->user_token;
         $balance = 0;
         $currency = $data->currency;
-        $payload = [
+        $logsPayload = [
             'is_request' => true,
             'requestId' => $request_id,
             'gameRoundCode' => null,
@@ -31,12 +31,12 @@ class AuthenticationService
         ];
 
         //STORE LOG
-        $newLog = SpribeLogs::insert($payload);
+        $newLog = SpribeLogs::insert($logsPayload);
 
         if($newLog){
             $response = array (
                 'code' => 200,
-                'message' => 'Success!',
+                'message' => 'ok',
                 'data' => array(
                     'user_id' => $user_id,
                     'username' => $username,
