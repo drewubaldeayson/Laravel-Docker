@@ -1,12 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\API;
-use App\Contracts\AuthServiceInterface;
-use App\Http\Requests\AuthenticationRequests;
-use App\Http\Requests\AuthenticationValidation;
 use App\Http\Controllers\API\ApiController;
-use App\Http\Resources\AuthenticationResources;
-use App\Contracts\AuthenticationServiceInterface;
+use App\Http\Requests\AuthenticationValidation;
 use App\Services\AuthenticationService;
 
 class AuthenticationController extends ApiController
@@ -18,30 +14,13 @@ class AuthenticationController extends ApiController
         $this->authenticationService = $authenticationService;
     }
     
-    public function authenticateProvider(AuthenticationRequests $request)
+    public function authenticateProvider(AuthenticationValidation $request)
     {
-        $data = $request;
-        return $this->authenticationService->authenticateProvider($data);
+        $response = $this->authenticationService->authenticateProvider($request);
+
+        if($response['code'] == 200)
+            return $this->successResponse($response['data'], $response['message'], $response['code']);
+
+        return $this->errorResponse($response['message'], $response['code']);
     }
-
-
 }
-
-
-/*
-
-Act : 
-route <--> controller
-    controller <--> service
-        service <--> repository
-
-
-    public function create(AuthenticationValidation $request)
-    {
-        
-        $data = []; // Your data array
-
-        $user = User::create($request->validated())
-        $this->authenticationService->store_kunwari($data);
-    }
-*/

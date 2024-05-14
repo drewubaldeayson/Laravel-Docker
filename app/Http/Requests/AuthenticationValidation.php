@@ -21,8 +21,6 @@ class AuthenticationValidation extends ApiRequests
         return true;
     }
 
-
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -31,11 +29,10 @@ class AuthenticationValidation extends ApiRequests
     public function rules()
     {
         return [
-            'user_token'    => 'required', // Add validation rules for user_token
-            'session_token' => 'required', // Add validation rules for session_token
-            'platform'      => 'required', // Add validation rules for platform
-            'currency'      => 'required' // Add validation rules for currency
-
+            'user_token'      => 'required|string',
+            'session_token'   => 'required|string',
+            'platform'   => 'required|string',
+            'currency'   => 'required|string'
         ];
     }
 

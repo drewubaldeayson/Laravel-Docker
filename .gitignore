@@ -34,7 +34,10 @@ docker-compose.override.yml
 /logs
 /php
 
+# Docker Container Data Files
 containerization/logs/*
+containerization/humite-be-db-data/*
+
 src/storage/*
 storage/*
 src/bootstrap/*

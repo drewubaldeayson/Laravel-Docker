@@ -25,12 +25,11 @@ trait ApiResponserTrait{
 		], $statusCode);
 	}
 
-	protected function errorResponse($data = null, $message = null, $statusCode)
+	protected function errorResponse($message = null, $statusCode)
 	{
 		return response()->json([
-			'success'	=> false,
 			'message' 	=> $message,
-			'data' 		=> $data
+			'code'      => $statusCode
 		], $statusCode);
 	}
 
