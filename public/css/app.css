@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.header {
+/* border: 1px solid red;
+padding: 15px; */
+}
+
+.row::after {
+content: "";
+clear: both;
+display: table;
+}
+
+[class*="col-"] {
+float: left;
+padding: 15px;
+/*border: 1px solid red;*/
+}
+
+.col-1 {
+width: 8.33%;
+}
+
+.col-2 {
+width: 16.66%;
+}
+
+.col-3 {
+width: 25%;
+}
+
+.col-4 {
+width: 33.33%;
+}
+
+.col-5 {
+width: 41.66%;
+}
+
+.col-6 {
+width: 50%;
+}
+
+.col-7 {
+width: 58.33%;
+}
+
+.col-8 {
+width: 66.66%;
+}
+
+.col-9 {
+width: 75%;
+}
+
+.col-10 {
+width: 83.33%;
+}
+
+.col-11 {
+width: 91.66%;
+}
+
+.col-12 {
+width: 100%;
+}
+
+body {
+/* max-width: 50px; */
+margin: 0 auto;
+margin-top: -3em;
+margin-bottom: -1em;
+}
+
+.main-title {
+font-size: 1.2rem;
+font-weight: 700;
+text-align: left;
+}
+
+.sub-title {
+text-align: left;
+line-height: 0.8rem;
+font-size: 0.8rem;
+margin-top: -5px;
+}
+
+p.sub-title.second-title {
+margin-top: -15px;
+margin-bottom: 15px;
+}
+
+.covid-title {
+padding-top: 30px;
+padding-bottom: 30px;
+}
+
+.info-title {
+font-weight: bold;
+font-size: 1rem;
+}
+
+.patient-info {
+line-height: 0.8rem;
+margin-top:-5em;
+font-size: 0.7rem
+}
+p.patient-info-body {
+font-size: 0.7rem
+}
+
+
+.result-negative {
+text-align: center;
+padding-top: 10px;
+padding-bottom: 10px;
+font-weight: 800;
+color: rgb(247, 243, 243);
+font-size: 1.8rem;
+background-image: linear-gradient(to right, #55cfda, #37bdd6, #19aad0, #0597c8, #1684be);
+}
+
+.result-positive {
+text-align: center;
+padding-top: 10px;
+padding-bottom: 10px;
+font-weight: 800;
+color: rgb(247, 243, 243);
+font-size: 1.8rem;
+background-image: linear-gradient(to right, #f65858, #e04643, #ca332e, #b31f1a, #9d0303);
+}
+
+.result-unupdated {
+text-align: center;
+padding-top: 10px;
+padding-bottom: 10px;
+font-weight: 800;
+color: rgb(247, 243, 243);
+font-size: 1.8rem;
+background-image: linear-gradient(to right, #daaa62, #e2a74d, #e19a31, #d78d1e, #d5840c);
+}
+
+.description{
+background-color: #dde9f9;
+line-height: 0.7rem;
+}
+.after-result {
+background-color: #7aadee;
+line-height: 0.7rem;
+}
+
+
+.main-result {
+text-align: center;
+font-weight: 700;
+color: rgb(247, 243, 243);
+font-size: 1.8rem;
+
+}
+
+.check-result {
+font-size: 2.5rem;
+text-transform: uppercase;
+font-weight: 600;
+}
+
+.before-result {
+font-size: 2rem;
+font-weight: 300;
+text-transform: uppercase;
+margin-top: -0.2em;
+}
+
+.sub-result {
+font-weight: 600;
+font-size: 1.5rem;
+margin-top: -1em;
+}
+
+.result-table {
+background-color: #dde9f9;
+padding-bottom: 5px;
+}
+
+.main-table {
+padding: 0px;
+}
+
+.consideras {
+text-align: right;
+font-style: italic;
+}
+
+.disclaimer {
+text-align: center;
+font-size: 1.2rem;
+font-weight: 700;
+background-color: #bebebe;
+}
+
+.disclaimer-body {
+background-color: #d9d9d9;
+line-height: 1.5rem;
+}
+
+.medical-officer {
+text-align: center;
+}
+
+.signature {
+padding-top: 3em;
+}
+
+.footer-address {
+text-align: center;
+}
+
+p.address {
+font-size: 0.8rem;
+line-height: 0.3rem;
+}
+
+.footer-name {
+font-size: 1rem;
+font-weight: 600;
+}
+
+
+ol {
+padding-left:10px;
+padding-right:10px;
+}
+
+
+.qrcode {
+text-align: center;
+}
+
+#barcode {
+text-align: center !important;
+width: 220px !important;
+height: 87px !important;
+}
+
+.logo {
+max-width: 120px;
+}

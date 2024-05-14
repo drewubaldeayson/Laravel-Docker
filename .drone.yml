@@ -1,0 +1,54 @@
+kind: pipeline
+type: ssh
+name: default
+
+server:
+  host:
+    from_secret: host
+  user:
+    from_secret: username
+  ssh_key:
+    from_secret: ssh_key
+
+clone:
+  disable: true
+
+steps:
+
+- name: heads up telegram notification
+  commands:
+  - cd /opt/TPSN-Backend && chmod +x exec_tg_prenotif.sh
+  - sh /opt/TPSN-Backend/exec_tg_prenotif.sh
+  environment:
+    TG_TOKEN:
+      from_secret: telegram_token
+    TG_USER:
+      from_secret: telegram_user
+  when:
+    branch:
+    - develop
+
+
+- name: initiate pull update
+  commands:
+  - cd /opt/TPSN-Backend && git pull
+  - make migrate
+  - make install
+  - make detach
+  when:
+    branch:
+    - develop
+
+
+- name: telegram notification when done
+  commands:
+  - cd /opt/TPSN-Backend
+  - sh /opt/TPSN-Backend/exec_tg_notif.sh
+  environment:
+    TG_TOKEN:
+      from_secret: telegram_token
+    TG_USER:
+      from_secret: telegram_user
+  when:
+    branch:
+    - develop

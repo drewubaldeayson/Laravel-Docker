@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "884140582093",
+    "project_id": "think-positive-stay-negative",
+    "storage_bucket": "think-positive-stay-negative.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884140582093:android:4d18c436d0f54720387584",
+        "android_client_info": {
+          "package_name": "com.lbtek.thinkpositivestaynegative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884140582093-ktbrr6btu4vskmic5ug9hnrqm7f7mie5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lbtek.thinkpositivestaynegative",
+            "certificate_hash": "98110c16bfc427dc440f90bbab468acb774b6ac5"
+          }
+        },
+        {
+          "client_id": "884140582093-9rgft0n2rous43un8vn15kmbp16dt2o9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS4qZdAS1Z3ePFhEWuk9LWRVybc8dmdsg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884140582093-9rgft0n2rous43un8vn15kmbp16dt2o9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

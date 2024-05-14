@@ -1,0 +1,373 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.header {
+    /* border: 1px solid red;*/
+    padding: 15px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    /*border: 1px solid red;*/
+}
+
+body {
+    /* max-width: 50px; */
+    margin: 0 auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.main-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.sub-title {
+    text-align: center;
+    line-height: 0.8rem;
+    font-size: 0.9rem;
+    margin-top: -5px;
+}
+
+p.sub-title.second-title {
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.covid-title {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.info-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.patient-info {
+    line-height: 1rem;
+}
+
+.result-negative {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 800;
+    color: rgb(247, 243, 243);
+    font-size: 1.8rem;
+    background-image: linear-gradient(to right, #55cfda, #37bdd6, #19aad0, #0597c8, #1684be);
+}
+
+.result-positive {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 800;
+    color: rgb(247, 243, 243);
+    font-size: 1.8rem;
+    background-image: linear-gradient(to right, #f65858, #e04643, #ca332e, #b31f1a, #9d0303);
+}
+
+.result-unupdated {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 800;
+    color: rgb(247, 243, 243);
+    font-size: 1.8rem;
+    background-image: linear-gradient(to right, #daaa62, #e2a74d, #e19a31, #d78d1e, #d5840c);
+}
+
+.description,
+.after-result {
+    background-color: #dde9f9;
+    line-height: 1.5rem;
+}
+
+.main-result {
+    background: rgb(31, 202, 31);
+    background: linear-gradient(94deg, #40b735 0%, #31a929 27%, #229c1e 100%);
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 800;
+    color: rgb(247, 243, 243);
+    font-size: 2.2rem;
+}
+
+.check-result {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.before-result {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.sub-result {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.result-table {
+    background-color: #dde9f9;
+    padding-bottom: 5px;
+}
+
+.main-table {
+    padding: 0px;
+}
+
+.consideras {
+    text-align: right;
+    font-style: italic;
+}
+
+.disclaimer {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: #bebebe;
+}
+
+.disclaimer-body {
+    background-color: #d9d9d9;
+    line-height: 1.5rem;
+}
+
+.medical-officer {
+    text-align: center;
+}
+
+.signature {
+    padding-top: 3em;
+}
+
+.footer-address {
+    text-align: center;
+}
+
+p.address {
+    font-size: 0.8rem;
+    line-height: 0.3rem;
+}
+
+.footer-name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+th,
+tr,
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+ol {
+    padding: 0;
+}
+
+ul {
+    padding: 5px;
+}
+
+.qrcode {
+    text-align: center;
+}
+
+#barcode {
+    text-align: center !important;
+    width: 220px !important;
+    height: 87px !important;
+}
+
+.logo {
+    max-width: 120px;
+}
+
+
+/*RESPONSIVE DESIGN*/
+
+@media only screen and (max-width: 992px) {
+    body {
+        max-width: 674px;
+    }
+    #barcode {
+        width: 200px !important;
+    }
+    div.col-7.title.header-container {
+        padding-left: 27px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        max-width: 580px;
+    }
+    .signature {
+        font-size: 0.8rem;
+    }
+    .logo {
+        max-width: 90px;
+    }
+    .main-title {
+        font-size: 1.2rem;
+    }
+    .sub-title {
+        font-size: 0.8rem;
+    }
+    #barcode {
+        height: 87px !important;
+        width: 150px !important;
+    }
+    .footer-name {
+        font-size: 0.8rem;
+    }
+    p.address {
+        font-size: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        max-width: 480px;
+        margin: 10px;
+    }
+    .logo {
+        width: 58px;
+    }
+    .main-title {
+        font-size: 14px;
+        margin-top: -6px;
+    }
+    div.col-1.header-container {
+        display: none;
+    }
+    div.col-7.title.header-container {
+        width: 80%;
+    }
+    .col-3 {
+        width: 100% !important;
+    }
+    p.sub-title.second-title {
+        margin-top: -6px;
+        margin-bottom: 13px;
+        font-size: 0.8rem;
+    }
+    .patient-info {
+        width: 100%;
+        margin-top: -50px;
+        margin-bottom: 25px;
+    }
+    .mobwidth {
+        width: 100%;
+        text-align: center;
+    }
+    #barcode {
+        height: 124px !important;
+    }
+    #qr {
+        width: 125px;
+    }
+    .title {
+        width: 70%;
+    }
+    .covid-title {
+        width: 100%;
+        margin-top: -50px !important;
+    }
+}
+
+@media print {
+    * {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    #controls,
+    .footer,
+    .footerarea {
+        display: none;
+    }
+    html,
+    body {
+        /*changing width to 100% causes huge overflow and wrap*/
+        height: 100%;
+        overflow: hidden;
+        background: #FFF;
+        font-size: 8.5pt;
+        line-height: 1.5rem;
+    }
+    .patient-info {
+        line-height: 1.5rem !important;
+        margin-bottom: 10px !important;
+    }
+    p.address {
+        font-size: 0.8rem;
+        line-height: 1.3rem;
+    }
+    .sub-title {
+        line-height: 1.5rem;
+    }
+    .result-negative {
+        height: 40px;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+    .description,
+    .after-result {
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+    .main-result {
+        padding-top: 10px !important;
+        padding-bottom: 20px !important;
+        height: 50px;
+    }
+    .before-result {
+        padding-top: 15px !important;
+    }
+    .switch {
+        height: 90px;
+    }
+    .sub-result {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+    .sign {
+        padding-top: 15px !important;
+    }
+    .qrbarcodes {
+        padding-top: 15px !important;
+    }
+    .template {
+        width: auto;
+        left: 0;
+        top: 0;
+    }
+    img {
+        width: 100%;
+    }
+    li {
+        margin: 0 0 10px 20px !important;
+    }
+    .printButton {
+        display: none;
+        margin: 0 auto;
+    }
+}
