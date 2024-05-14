@@ -18,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
 
+    //SPRIBE ENDPOINT
+    //Authentication
+    Route::post('auth/',                                                      'AuthenticationController@show');
+
     Route::group([
         'middleware' => ['jwt.verify']
     ],function ($router) {
@@ -330,10 +334,6 @@ Route::prefix('v1')->group(function () {
     Route::post('user/signup',                                              'AuthController@store');
     Route::post('user/signin',                                              'AuthController@login');
     Route::post('user/refresh',                                             'AuthController@refresh');
-
-    //SPRIBE ENDPOINT
-    //Authentication
-    Route::post('auth',                                                      'AuthenticationController@show');
 
     // PUBLIC - USER OTP
     Route::post('user/otp/validate',                                        'AuthController@validateMobileOtp');

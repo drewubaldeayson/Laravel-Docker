@@ -31,6 +31,6 @@ class AuthenticationService implements AuthenticationServiceInterface
             )
         );
 
-        print_r($response);
+        return $response;
     }
 }

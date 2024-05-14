@@ -21,7 +21,8 @@ class AuthenticationController extends ApiController
     {
 
         $data = []; // Your data array
-        $this->authenticationService->store_kunwari($data);
+        return $this->authenticationService->store_kunwari($data);
+
     }
 
 

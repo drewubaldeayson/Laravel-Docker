@@ -15,7 +15,7 @@ class CreateTsApiInCallsTable extends Migration
             $table->string('api_key')->nullable();
             $table->longText('header');
             $table->longText('body');
-            $table->enum('type', ['create new player', 'game url request', 'get user balance', 'balance update', 'balance refund', 'block balance', 'release balance', 'playtech auth', 'playtech bet', 'playtech game result', 'playtech submit dialog', 'playtech keep alive', 'playtech logout', 'playtech transfer found', 'playtech leave tip', 'playtech notify bonus event', 'playtech italy bring money to table', 'playtech italy end table session', 'playtech end session', 'playtech remove free spin of session']);
+            $table->enum('type', ['create new player', 'game url request', 'get user balance', 'balance update', 'balance refund', 'block balance', 'release balance', 'spribe auth', 'spribe bet', 'spribe game result', 'spribe submit dialog', 'spribe keep alive', 'spribe logout', 'spribe transfer found', 'spribe leave tip', 'spribe notify bonus event', 'spribe italy bring money to table', 'spribe italy end table session', 'spribe end session', 'spribe remove free spin of session']);
             $table->enum('from', ['game_provider', 'casino']);
             $table->unsignedBigInteger('sender_id');
             $table->unsignedBigInteger('modify_uid');
