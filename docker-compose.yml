@@ -1,7 +1,10 @@
-version: '3'
+version: '3.9'
+
 services:
   humite-backend:
-    image: takamata018/laravel7.4-fpm
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: unless-stopped
     container_name: humite-backend
     volumes:
@@ -9,7 +12,10 @@ services:
     ports:
       - "${APP_MACHINE_SECURE_HOST_PORT}:9000"
     networks:
-      - ${NETWORK}
+      - humite-backend
+    env_file:  # Ensure environment variables are passed to the container
+      - .env
+
   nginx:
     image: nginx:stable-alpine
     restart: unless-stopped
@@ -24,23 +30,25 @@ services:
     depends_on:
       - humite-backend
     networks:
-      - ${NETWORK}
+      - humite-backend
+    env_file:  # Ensure environment variables are passed to the container
+      - .env
+
   db:
-    image: postgres:14-alpine
-    container_name: humite-backend-postgresql
+    image: postgres
+    container_name: humite-backend-postgres
+    restart: always
     ports:
-      - 5432:5432
-    volumes:
-      - ~/apps/postgres:/var/lib/postgresql/data
+      - "${DATABASE_HOST_MACHINE_HOST_PORT}:5432"
     environment:
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_USER=root
-      - POSTGRES_DB=spribe
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - ./containerization/humite-be-db-data:/var/lib/postgresql/data
+    networks:
+      - humite-backend
 
 networks:
   humite-backend:
-    name: ${NETWORK}
-
-# volumes:
-#   humite-be-db-data:
-#     external: true
+    name: humite-backend
