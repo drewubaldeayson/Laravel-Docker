@@ -17,15 +17,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            BookingResultStatusSeeder::class,
-            BookingStatusSeeder::class,
-            BookingTypeSeeder::class,
-            ClinicStatusSeeder::class,
-            CorporateStatusSeeder::class,
-            SelfCheckerQuestionSeeder::class,
-            SelfCheckerSymtomsListSeeder::class,
-            ServiceEventTypeSeeder::class,
-            UserRoleSeeder::class,
+            GamesSeeder::class,
+            CurrenciesSeeder::class
         ]);
     }
 }
