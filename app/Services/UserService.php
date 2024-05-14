@@ -234,16 +234,6 @@ class UserService implements UserInterface
         return $this->location->create($prepData);
     }
 
-    private function storeUserCorporate(array $attributes)
-    {
-        $prepData = array(
-            'user_id' =>  $attributes['user_id'],
-            'corporate_id' =>  $attributes['clinic_id'],
-            'status' =>  1,
-        );
-        return $this->$userCorporate->create($prepData);
-    }
-
     private function storeUserVerification(array $attributes)
     {
         $prepData = array(

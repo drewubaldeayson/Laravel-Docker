@@ -20,7 +20,7 @@ Route::prefix('v1')->group(function () {
 
     //SPRIBE ENDPOINT
     //Authentication
-    Route::post('auth/',                                                      'AuthenticationController@show');
+    Route::post('auth/',                                                      'AuthenticationController@authenticateProvider');
 
     Route::group([
         'middleware' => ['jwt.verify']

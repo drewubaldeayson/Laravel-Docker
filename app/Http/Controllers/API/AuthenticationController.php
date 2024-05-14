@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 use App\Contracts\AuthServiceInterface;
+use App\Http\Requests\AuthenticationRequests;
 use App\Http\Requests\AuthenticationValidation;
 use App\Http\Controllers\API\ApiController;
 use App\Http\Resources\AuthenticationResources;
@@ -17,12 +18,10 @@ class AuthenticationController extends ApiController
         $this->authenticationService = $authenticationService;
     }
     
-    public function show()
+    public function authenticateProvider(AuthenticationRequests $request)
     {
-
-        $data = []; // Your data array
-        return $this->authenticationService->store_kunwari($data);
-
+        $data = $request;
+        return $this->authenticationService->authenticateProvider($data);
     }
 
 

@@ -8,17 +8,12 @@ use App\Contracts\AuthenticationServiceInterface;
 
 class AuthenticationService implements AuthenticationServiceInterface
 {
-    protected $user_id;
-    protected $username;
-    protected $balance;
-    protected $currency;
-
-    public function store_kunwari($data) 
+    public function authenticateProvider($data) 
     {
         $user_id = "123XXX";
         $username = "arjay_notorio";
-        $balance = 123;
-        $currency = "MYR";
+        $balance = 100000;
+        $currency = $data->currency;
 
         $response = array (
             'code' => 200,
@@ -30,7 +25,6 @@ class AuthenticationService implements AuthenticationServiceInterface
                 'currency' => $currency
             )
         );
-
         return $response;
     }
 }
