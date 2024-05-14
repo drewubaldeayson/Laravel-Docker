@@ -1,7 +1,5 @@
-FROM php:7.2-fpm
+FROM php:7.4-fpm
 LABEL maintenance="sixpathofdevops"
-
-# COPY ./scripts /scripts
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -17,32 +15,38 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     libzip-dev \
     zip \
-    unzip \ 
-    libmagickwand-dev
+    unzip \
+    libmagickwand-dev \
+    libpq-dev # Install PostgreSQL development library
 
+# Install imagick extension
 RUN printf "\n" | pecl install imagick
 
-# redis 
+# Install redis extension
 RUN pecl install -o -f redis \
-&&  rm -rf /tmp/pear \
-&&  docker-php-ext-enable redis
+    && rm -rf /tmp/pear \
+    && docker-php-ext-enable redis
+
+# Install PDO_PGSQL extension for PostgreSQL
+RUN docker-php-ext-install pdo_pgsql
+
+# Install gd extension with dependencies
+RUN docker-php-ext-install gd
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install extensions for php
 RUN docker-php-ext-install pdo pdo_mysql sockets mbstring zip exif pcntl
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg
-RUN docker-php-ext-install gd
 RUN docker-php-ext-enable imagick
-
-# RUN chmod -R +x /scripts
 
 # Install composer (php package manager)
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# run some script outside
-# ENV PATH="/scripts:$PATH"
+# Set the working directory
+WORKDIR /var/www/html
 
-# CMD ["run.sh"]
+# Expose port 9000 and start php-fpm server
+EXPOSE 9000
+CMD ["php-fpm"]
