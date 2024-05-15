@@ -9,9 +9,9 @@ class TsApiSessionsSeeder extends Seeder
     public function run()
     {
         DB::table('ts_api_sessions')->insert([
-            'request_token' => 'sample_request_token',
+            'request_token' => '123456789YY',
             'initial_session' => null,
-            'session' => 'sample_session',
+            'session' => '123456789XX',
             'api_key' => null,
             'casino_id' => 1,
             'player_id' => null,
