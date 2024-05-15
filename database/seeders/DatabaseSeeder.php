@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             GamesSeeder::class,
-            CurrenciesSeeder::class
+            CurrenciesSeeder::class,
+            GameProviderSeeder::class
         ]);
     }
 }
