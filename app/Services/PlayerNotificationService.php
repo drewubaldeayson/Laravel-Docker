@@ -26,6 +26,8 @@ class PlayerNotificationService
             'create_dt' => Carbon::now(),
             'modify_dt' => Carbon::now()
         ];
+        
+        //TODO: CALL API TO NOTIFY PLAYER
 
         //STORE LOG
         $newLog = SpribeLogs::insert($logsPayload);
