@@ -36,7 +36,7 @@ docker-compose.override.yml
 
 # Docker Container Data Files
 containerization/logs/*
-containerization/humite-be-db-data/*
+containerization/andrewayson-laravel-be-db-data/*
 
 src/storage/*
 storage/*

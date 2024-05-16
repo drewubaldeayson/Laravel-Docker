@@ -26,29 +26,29 @@ Template
 
 
 # install
-docker-compose run --rm humite-backend composer install
+docker-compose run --rm andrewayson-laravel-backend composer install
 
 # build
-docker-compose run --rm humite-backend bash -c "chmod -R 777 storage && php artisan key:generate"
+docker-compose run --rm andrewayson-laravel-backend bash -c "chmod -R 777 storage && php artisan key:generate"
 
 # migrate 
-docker-compose run --rm humite-backend php artisan migrate
+docker-compose run --rm andrewayson-laravel-backend php artisan migrate
 
 # reset-config
-docker-compose run --rm humite-backend php artisan route:clear
-docker-compose run --rm humite-backend php artisan view:clear
-docker-compose run --rm humite-backend php artisan config:cache
-docker-compose run --rm humite-backend php artisan config:clear
+docker-compose run --rm andrewayson-laravel-backend php artisan route:clear
+docker-compose run --rm andrewayson-laravel-backend php artisan view:clear
+docker-compose run --rm andrewayson-laravel-backend php artisan config:cache
+docker-compose run --rm andrewayson-laravel-backend php artisan config:clear
 
 # seed
-docker-compose run --rm humite-backend php artisan db:seed
+docker-compose run --rm andrewayson-laravel-backend php artisan db:seed
 
 # test
-docker-compose run --rm humite-backend php artisan test
+docker-compose run --rm andrewayson-laravel-backend php artisan test
 
 # destroy
 docker-compose down --volumes
-docker volume rm humite-be-db-data
+docker volume rm andrewayson-laravel-be-db-data
 
 # dev up
 docker-compose up
