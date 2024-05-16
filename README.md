@@ -1,10 +1,8 @@
-# Think Positive, Stay Negative - Backend
-
-Get tested regularly and live life safely together
+# Laravel Docker Template
 
 ## Description
 
-Humite 
+Template
 
 ## Getting Started
 
@@ -25,39 +23,40 @@ Humite
 * Here are some of the make commands you may use for the project.
 
 * For setup before proceeding to installation
-```
-make setup
-```
 
-* For installation
-```
-make install
-```
 
-* For running your application for development.
-```
-make dev
-```
+# install
+docker-compose run --rm humite-backend composer install
 
-* For running application with detachment
-```
-make detach
-```
+# build
+docker-compose run --rm humite-backend bash -c "chmod -R 777 storage && php artisan key:generate"
 
-* For storage directories issue and application key generation.
-```
-make build
-```
+# migrate 
+docker-compose run --rm humite-backend php artisan migrate
 
-* For database migration
-```
-make migrate
-```
+# reset-config
+docker-compose run --rm humite-backend php artisan route:clear
+docker-compose run --rm humite-backend php artisan view:clear
+docker-compose run --rm humite-backend php artisan config:cache
+docker-compose run --rm humite-backend php artisan config:clear
 
-* For undo everything (make sure you know what you're doing.)
-```
-make destroy
-```
+# seed
+docker-compose run --rm humite-backend php artisan db:seed
+
+# test
+docker-compose run --rm humite-backend php artisan test
+
+# destroy
+docker-compose down --volumes
+docker volume rm humite-be-db-data
+
+# dev up
+docker-compose up
+
+# detach up
+docker-compose up --build -d
+
+
 
 ## Help
 
@@ -68,8 +67,7 @@ Please ping me or just give me a heads up for any issues encountered.
 
 Contributors names and contact info
 
-Arjay Notorio <br/>
-[@sixpathofdevops](https://codepot.qoneqtor.com/thunlit) - Drey 
+Andrew Ayson <br/>
 
 
 ## Version History
@@ -80,8 +78,3 @@ Arjay Notorio <br/>
 ## License
 
 N O N E
-
-## Acknowledgments
-
-Organization
-* [LBTEK](https://lbteksystems.com)
