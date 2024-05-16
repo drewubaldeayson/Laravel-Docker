@@ -24,6 +24,13 @@ Template
 
 * For setup before proceeding to installation
 
+FIRST
+cp.env.example .env
+
+SECOND
+cd storage/
+mkdir -p framework/{sessions,views,cache}
+chmod -R 775 framework
 
 # install
 docker-compose run --rm andrewayson-laravel-backend composer install
